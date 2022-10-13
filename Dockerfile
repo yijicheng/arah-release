@@ -27,6 +27,8 @@ RUN cd ~ && git clone --recursive https://ghproxy.com/github.com/taconite/arah-r
 RUN . ~/.bashrc && \
     cd ~/arah-release && \
     conda env create -f environment.yml && \
+RUN . ~/.bashrc && \
+    cd ~/arah-release && \
     conda activate arah && \
     pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
     pip install cython==0.29.23 && \
