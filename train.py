@@ -36,7 +36,7 @@ parser.add_argument('--run-name', type=str, default='',
                     help='Run name for Wandb logging.')
 
 if  __name__ == '__main__':
-    args = parser.parse_args()
+    args = parser.parse_args(['--num-workers', '4', 'configs/arah-zju/ZJUMOCAP-313_4gpus.yaml'])
     cfg = config.load_config(args.config, 'configs/default.yaml')
     num_workers = args.num_workers
     epochs_per_run = args.epochs_per_run

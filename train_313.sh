@@ -1,1 +1,1 @@
-python train.py --num-workers 4 configs/arah-zju/ZJUMOCAP-313_4gpus.yaml
+python train.py --num-workers 4 configs/arah-zju/ZJUMOCAP-313-tava_4gpus.yaml

@@ -1,7 +1,7 @@
 method: metaavatar_render
 data:
   dim: 3
-  dataset: zju_mocap
+  dataset: zju_mocap_tava
   path: data/zju_mocap
   use_aug: false
   normalized_scale: true
@@ -11,15 +11,21 @@ data:
   train_views: ['1', '7', '13', '19']
   val_views: ['2', '3', '4', '5', '6', '8', '9', '10', '11', '12', '14', '15', '16', '17', '18', '22', '23']
   test_views: ['2', '3', '4', '5', '6', '8', '9', '10', '11', '12', '14', '15', '16', '17', '18', '22', '23']
-  train_subsampling_rate: 1
-  train_start_frame: 0
-  train_end_frame: 60
-  val_subsampling_rate: 100000
-  val_start_frame: 0
-  val_end_frame: 0
-  test_subsampling_rate: 30
-  test_start_frame: 60
-  test_end_frame: 1061
+  train_subsampling_rate: null
+  train_start_frame: null
+  train_end_frame: null
+  val_subsampling_rate: null
+  val_start_frame: null
+  val_end_frame: null
+  test_subsampling_rate: null
+  test_start_frame: null
+  test_end_frame: null
+  all_frame: data/zju_mocap/CoreView_313/splits/all.txt
+  train_frame: data/zju_mocap/CoreView_313/splits/train.txt
+  val_frame: null
+  val_ind_frame: data/zju_mocap/CoreView_313/splits/val_ind.txt
+  val_ood_frame: data/zju_mocap/CoreView_313/splits/val_ood.txt
+  test_frame: data/zju_mocap/CoreView_313/splits/test.txt
   num_fg_samples: 1024
   num_bg_samples:  1024
   off_surface_thr: 0.2
@@ -43,7 +49,7 @@ model:
   far_surface_samples: 16
 training:
   gpus: [6,7]
-  out_dir: out/arah-zju/ZJUMOCAP-313_4gpus
+  out_dir: out/arah-zju/ZJUMOCAP-313-TAVA_4gpus
   batch_size: 1 # images per-GPU
   validate_every_n_epochs: 20
   checkpoint_every_n_epochs: 5

@@ -13,7 +13,9 @@ from im2mesh.data.people_snapshot import (
 from im2mesh.data.zju_mocap_odp import (
     ZJUMOCAPODPDataset
 )
-
+from im2mesh.data.zju_mocap_tava import (
+    ZJUMOCAPTAVADataset
+)
 __all__ = [
     # Core
     collate_remove_none,
@@ -21,6 +23,7 @@ __all__ = [
     # Datasets
     ZJUMOCAPDataset,
     ZJUMOCAPODPDataset,
+    ZJUMOCAPTAVADataset,
     H36MDataset,
     PeopleSnapshotDataset
 ]
