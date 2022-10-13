@@ -10,7 +10,7 @@ RUN sed -i "s@http://.*archive.ubuntu.com@https://mirrors.tuna.tsinghua.edu.cn@g
 RUN sed -i "s@http://.*security.ubuntu.com@https://mirrors.tuna.tsinghua.edu.cn@g" /etc/apt/sources.list
 RUN apt-get clean
 RUN apt-get -y update --fix-missing
-RUN apt-get -y install wget vim git tmux build-essential
+RUN apt-get -y install wget vim git tmux build-essential libgl1-mesa-glx libglib2.0-0
 
 # Install MiniConda
 RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh -O ~/miniconda.sh && \
