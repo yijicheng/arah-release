@@ -26,7 +26,7 @@ RUN conda init bash
 RUN cd ~ && git clone --recursive https://ghproxy.com/github.com/taconite/arah-release.git
 RUN . ~/.bashrc && \
     cd ~/arah-release && \
-    conda env create -f environment.yml && \
+    conda env create -f environment.yml
 RUN . ~/.bashrc && \
     cd ~/arah-release && \
     conda activate arah && \
