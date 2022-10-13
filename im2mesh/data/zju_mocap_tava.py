@@ -113,7 +113,8 @@ class ZJUMOCAPTAVADataset(data.Dataset):
             with open(txt_frame, mode="r") as tf:
                 frame_list = np.loadtxt(tf, dtype=int).tolist()
 
-            model_files = sorted(glob.glob(os.path.join(subject_dir, 'models/*.npz')))[frame_list]
+            model_files = sorted(glob.glob(os.path.join(subject_dir, 'models/*.npz')))
+            model_files = [model_files[i] for i in frame_list]
 
             for cam_idx, cam_name in enumerate(cam_names):
                 cam_dir = os.path.join(subject_dir, cam_name)
@@ -121,9 +122,11 @@ class ZJUMOCAPTAVADataset(data.Dataset):
                 img_files = sorted(glob.glob(os.path.join(cam_dir, '*.jpg')))
                 frames = np.arange(len(img_files)).tolist()
 
-                img_files = sorted(glob.glob(os.path.join(cam_dir, '*.jpg')))[frame_list]
-                mask_files = sorted(glob.glob(os.path.join(cam_dir, '*.png')))[frame_list]
-                frames = frames[frame_list]
+                img_files = sorted(glob.glob(os.path.join(cam_dir, '*.jpg')))
+                img_files = [img_files[i] for i in frame_list]
+                mask_files = sorted(glob.glob(os.path.join(cam_dir, '*.png')))
+                mask_files = [mask_files[i] for i in frame_list]
+                frames = [frames[i] for i in frame_list]
                 
                 assert (len(model_files) == len(img_files) and len(mask_files) == len(img_files))
 
