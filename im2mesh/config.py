@@ -275,7 +275,7 @@ def get_dataset(mode, cfg, view_split=None, subsampling_rate=None, start_frame=N
         
         txt_frames = {
             'train': cfg['data']['train_frame'],
-            'val': cfg['data']['val_frame'],
+            'val': cfg['data']['test_frame'],
             'val_ind': cfg['data']['val_ind_frame'],
             'val_ood': cfg['data']['val_ood_frame'],
             'test': cfg['data']['test_frame'],

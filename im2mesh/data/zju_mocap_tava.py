@@ -110,6 +110,8 @@ class ZJUMOCAPTAVADataset(data.Dataset):
         for subject in subjects:
             subject_dir = os.path.join(dataset_folder, subject)
             
+            assert txt_frame is not None
+            print(f"Read frames from {txt_frame}")
             with open(txt_frame, mode="r") as tf:
                 frame_list = np.loadtxt(tf, dtype=int).tolist()
 
