@@ -27,23 +27,6 @@ RUN cd ~ && git clone --recursive https://ghproxy.com/github.com/taconite/arah-r
 RUN . ~/.bashrc && \
     cd ~/arah-release && \
     pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
-    conda env create -f environment.yml
-RUN . ~/.bashrc && \
-    cd ~/arah-release && \
+    conda env create -f environment.yml && \
     conda activate arah && \
-    pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
-    pip install cython==0.29.23 && \
-    pip install gdown==4.5.1 && \
-    pip install imageio==2.13.5 && \
-    pip install imageio-ffmpeg==0.4.7 && \
-    pip install kornia==0.5.10 && \
-    pip install lpips==0.1.4 && \
-    pip install matplotlib==3.4.2 && \
-    pip install opencv-python==4.5.5.62 && \
-    pip install pandas==1.2.4 && \
-    pip install plyfile==0.7.4 && \
-    pip install scikit-image==0.18.1 && \
-    pip install scikit-learn==0.24.2 && \
-    pip install trimesh==3.9.20 && \
-    pip install wandb==0.12.15 && \
     python setup.py build_ext --inplace
