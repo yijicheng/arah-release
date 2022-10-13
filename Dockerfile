@@ -25,7 +25,7 @@ RUN conda init bash
 
 RUN cd ~ && git clone --recursive https://ghproxy.com/github.com/taconite/arah-release.git
 RUN . ~/.bashrc && \
-    cd ~/arah-release $$ \
+    cd ~/arah-release && \
     conda env create -f environment.yml && \
     conda activate arah && \
     pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
